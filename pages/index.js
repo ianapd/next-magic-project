@@ -96,7 +96,7 @@ export default function Home() {
   }
 
   // Front-Matter
-  const str = '---\nfoo: bar\n---\nThis is an excerpt.\n---\nThis is content';
+  const str = '---\ntitle: Content 1\n---\nThis is an excerpt.\n---\nThis is content';
   const file = matter(str, { excerpt: true })
 
   useEffect(() => {
@@ -130,7 +130,10 @@ export default function Home() {
           <IconButton
             icon={<BsFacebook />}
             onClick={() => loginWithFacebook()}/>
-        </HStack>    
+        </HStack>  
+        <Heading size="xl" mb={4}>Gray Matter</Heading>
+        <Text>Data: {file.data.title}</Text>  
+        <Text>Content: {file.content}</Text>
         <Text mb={8}>Note: See the console log in Inspect Element to view the front matter.</Text>
       </Container>
     </Box>
